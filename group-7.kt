@@ -1,5 +1,8 @@
  fun main(args: Array<String>) {
-    
+     val baseSchedule = mapOf("A-B" to 2, "B-C" to 2, "C-D" to 2, "D-E" to 2, "E-F" to 2)
+    val maintenance = mapOf("C-D" to 1)
+    val eventRoutes = listOf("B-C", "C-D", "D-E")
+    val currentHour = 8
 }
 
 fun isPeakHour(hour:Int): Boolean{
@@ -8,7 +11,7 @@ fun isPeakHour(hour:Int): Boolean{
 fun adjustSchedule(baseSchedule:Map<String,Int>, maintenance:Map<String, Int>,hour: Int,eventRoutes: List<String>):Map<String, Int>{
     val newSchedule = mutableMapOf<String, Int>()
     val isPeak = isPeakHour(hour)
-    println("cu")
+    
 
     for ((route,baseCount) in baseSchedule){
         var adjusted = baseCount
@@ -23,9 +26,9 @@ fun adjustSchedule(baseSchedule:Map<String,Int>, maintenance:Map<String, Int>,ho
             message+="Added 1 for special events"
         }
         if (maintenance.containsKey(route)){
-            val for_maint = maintenance[route]?:0
+            val forMaint = maintenance[route]?:0
             adjusted-=1
-            message+="subtracted $for_maint for maintenance"
+            message+="subtracted $forMaint for maintenance"
         }
     }
 }
