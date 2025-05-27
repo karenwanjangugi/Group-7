@@ -1,0 +1,21 @@
+# Input
+list of routes and number of buses/trains per route
+peakHour
+Maintenance schedule
+
+
+Create a function peakHour that takes the range of hours when there is peak traffic
+
+Create a function adjustSchedule which takes in The base schedule which is the schedule of routes and the number of buses or trains per route
+
+Create the new schedule array which is an empty array
+
+Iterate through the base schedule and check whether the event routes are there.
+
+If so increase the number of vehicles for that route
+
+Check whether it is peak hour, if so increase the number of vehicles
+
+For the routes which are not busy the vehicles using that route go for maintenance
+
+Return the new schedule
